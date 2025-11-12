@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingrid Julia Alves da Silva</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bibliotecas para geração de PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho com Foto -->
+        <header class="header">
+            <div class="header-content">
+                <div class="foto-container">
+                    <img src="img/julia-perfil.png" alt="Foto perfil julia" class="foto-perfil">
+                </div>
+                <div class="info-pessoal">
+                    <h1 class="nome">Ingrid Julia Da silva</h1>
+                    <p class="contato">
+                        Fortaleza, CE | 19 anos | <a href="https://wa.me/558598295909" target="_blank" rel="noopener noreferrer">Whatsapp: (85) 9829-5909</a> 
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Seção de Perfil Profissional -->
+        <section class="perfil">
+            <h2 class="secao-titulo">Perfil Profissional</h2>
+            <p class="perfil-texto">
+                Tenho experiência em vendas, atendimento ao cliente e estética. Destaco-me por comunicação eficaz, empatia e criatividade, adquiridas em varejo de moda, eventos e call center. Busco oportunidades em áreas de atendimento ou beleza para crescer e contribuir com entusiasmo e dedicação.
+            </p>
+        </section>
+
+        <!-- Experiência Profissional -->
+        <section class="experiencia">
+            <h2 class="secao-titulo">Experiência Profissional</h2>
+            <div class="experiencia-item">
+                <h3 class="cargo">Atendente de Call Center</h3>
+                <p class="empresa-periodo">Paraíso das Mensagens, Fortaleza-CE | Atual</p>
+                <ul class="responsabilidades">
+                    <li>Atendimento telefônico a clientes, resolvendo dúvidas e processando pedidos com eficiência.</li>
+                    <li>Manutenção de alta taxa de satisfação do cliente através de comunicação clara e empática.</li>
+                </ul>
+            </div>
+            <div class="experiencia-item">
+                <h3 class="cargo">Vendedora</h3>
+                <p class="empresa-periodo">3 Conquistas Fashion (Box no Centro Fashion), Fortaleza-CE | [Ano: 2023]</p>
+                <ul class="responsabilidades">
+                    <li>Vendas consultivas de roupas femininas, alcançando metas mensais de vendas.</li>
+                    <li>Atendimento personalizado, sugerindo looks e promovendo produtos com foco em satisfação da cliente.</li>
+                </ul>
+            </div>
+            <div class="experiencia-item">
+                <h3 class="cargo">Auxiliar em Eventos</h3>
+                <p class="empresa-periodo">Eventos Festivos| [Em Exercício]</p>
+                <ul class="responsabilidades">
+                    <li>Apoio na venda de água, cervejas, caldos e merendas, gerenciando estoque e fluxo de clientes.</li>
+                    <li>Manuseio de caixa e interação dinâmica com público em ambientes de alta movimentação.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Formação e Cursos -->
+        <section class="formacao">
+            <h2 class="secao-titulo">Formação e Cursos</h2>
+            <div class="curso-item">
+                <h3 class="curso-nome">Curso de Design de Sombrancelhas</h3>
+                <p class="instituicao-periodo">SENAC, Fortaleza-CE | Concluído em [Ano: 2023]</p>
+                <p class="descricao">Técnicas de design, henna e micropigmentação para estética facial.</p>
+            </div>
+            <!-- Adicione mais cursos ou ensino médio aqui se aplicável -->
+        </section>
+
+        <!-- Habilidades -->
+        <section class="habilidades">
+            <h2 class="secao-titulo">Habilidades</h2>
+            <ul class="habilidades-lista">
+                <li>Vendas e Negociação</li>
+                <li>Atendimento ao Cliente</li>
+                <li>Comunicação Verbal e Escrita</li>
+                <li>Conhecimentos em Beleza (Sombrancelhas)</li>
+                <li>Trabalho em Equipe e sob Pressão</li>
+                <li>Ferramentas de Call Center (ex: CRM básico)</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Botão para Download PDF -->
+    <div style="text-align: center; margin: 20px;">
+        <button id="downloadPDF" class="btn-pdf">Baixar Currículo em PDF</button>
+    </div>
+
+    <!-- Script para geração de PDF -->
+    <script src="script.js"></script>
+</body>
+</html
