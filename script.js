@@ -11,30 +11,64 @@ document.addEventListener('DOMContentLoaded', function() {
             const { jsPDF } = window.jspdf;
             const element = document.querySelector('.container');
             
-            // Usa html2canvas para capturar a imagem e depois converte para PDF
+            // Configurações otimizadas para html2canvas
             html2canvas(element, {
-                scale: 2, // Melhora a qualidade da imagem
-                useCORS: true, // Permite carregar imagens externas
-                logging: false
+                scale: 2, // Qualidade alta
+                useCORS: true,
+                logging: false,
+                letterRendering: true,
+                allowTaint: false,
+                backgroundColor: '#ffffff',
+                width: element.scrollWidth,
+                height: element.scrollHeight
             }).then(function(canvas) {
-                const imgData = canvas.toDataURL('image/png');
+                const imgData = canvas.toDataURL('image/png', 1.0);
                 const pdf = new jsPDF('p', 'mm', 'a4');
-                const imgWidth = 210; // Largura A4 em mm
-                const pageHeight = 295; // Altura A4 em mm
-                const imgHeight = (canvas.height * imgWidth) / canvas.width;
-                let heightLeft = imgHeight;
-                let position = 0;
                 
-                // Adiciona a primeira página
-                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-                heightLeft -= pageHeight;
+                // Dimensões da página A4 em mm
+                const pageWidth = 210;
+                const pageHeight = 297;
+                const margin = 10;
+                const contentWidth = pageWidth - (margin * 2);
+                const contentHeight = pageHeight - (margin * 2);
                 
-                // Adiciona páginas adicionais se necessário
-                while (heightLeft >= 0) {
-                    position = heightLeft - imgHeight;
-                    pdf.addPage();
-                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-                    heightLeft -= pageHeight;
+                // Calcula as dimensões da imagem mantendo proporção
+                const imgWidth = canvas.width;
+                const imgHeight = canvas.height;
+                const ratio = imgWidth / imgHeight;
+                
+                // Calcula altura e largura para caber na página mantendo proporção
+                let pdfImgWidth = contentWidth;
+                let pdfImgHeight = contentWidth / ratio;
+                
+                // Se a altura for maior que o conteúdo da página, ajusta
+                if (pdfImgHeight > contentHeight) {
+                    pdfImgHeight = contentHeight;
+                    pdfImgWidth = contentHeight * ratio;
+                }
+                
+                // Calcula quantas páginas serão necessárias
+                const totalHeight = pdfImgHeight;
+                
+                // Se o conteúdo cabe em uma página
+                if (totalHeight <= contentHeight) {
+                    pdf.addImage(imgData, 'PNG', margin, margin, pdfImgWidth, pdfImgHeight);
+                } else {
+                    // Divide em múltiplas páginas usando posicionamento negativo
+                    let heightLeft = totalHeight;
+                    let position = margin;
+                    
+                    // Primeira página
+                    pdf.addImage(imgData, 'PNG', margin, position, pdfImgWidth, pdfImgHeight);
+                    heightLeft -= contentHeight;
+                    
+                    // Páginas adicionais
+                    while (heightLeft > 0) {
+                        position = margin - (totalHeight - heightLeft);
+                        pdf.addPage();
+                        pdf.addImage(imgData, 'PNG', margin, position, pdfImgWidth, pdfImgHeight);
+                        heightLeft -= contentHeight;
+                    }
                 }
                 
                 // Salva o PDF

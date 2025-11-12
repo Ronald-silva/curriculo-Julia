@@ -42,7 +42,7 @@ section {
 }
 
 .perfil-texto {
-    text-align: justify;
+    text-align:left;
     font-size: 1.05em;
     line-height: 1.7;
     color: #444;
@@ -141,6 +141,8 @@ section {
 .foto-perfil {
     width: 120px; /* Tamanho ideal para currículos: não muito grande */
     height: 120px;
+    max-width: 120px; /* Garante que não estique no PDF */
+    max-height: 120px; /* Garante que não estique no PDF */
     border-radius: 50%; /* Formato circular para toque moderno e amigável */
     object-fit: cover; /* Mantém proporção da imagem */
     object-position: center 15%; /* Centraliza horizontalmente e posiciona o rosto um pouco mais para cima */
@@ -226,4 +228,35 @@ section {
     background-color: #6c757d;
     cursor: not-allowed;
     opacity: 0.7;
+}
+
+/* Estilos para melhor renderização no PDF */
+@media print {
+    body {
+        background-color: white;
+        padding: 0;
+    }
+    
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+        padding: 20px;
+    }
+    
+    .btn-pdf {
+        display: none;
+    }
+}
+
+/* Melhora quebra de páginas no PDF */
+.experiencia-item,
+.curso-item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+section {
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
