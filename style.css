@@ -93,8 +93,22 @@ body{
     font-weight:500;
 }
 
-.contato a{ color:var(--azul-principal); text-decoration:none; font-weight:600 }
-.contato a:hover{ color:var(--azul-escuro); text-decoration:underline }
+.contato a{ 
+    color:var(--azul-principal); 
+    text-decoration:none; 
+    font-weight:600;
+    display:inline-block;
+    min-height:44px; /* Área de toque mínima para mobile */
+    line-height:44px;
+    padding:0 4px;
+}
+.contato a:hover{ 
+    color:var(--azul-escuro); 
+    text-decoration:underline;
+}
+.contato a:active{
+    opacity:0.8;
+}
 
 /* Seções */
 section{ margin-bottom:18px; padding-bottom:6px; }
@@ -135,10 +149,29 @@ section:not(:last-child){ border-bottom:1px solid #eef3fb; padding-bottom:18px }
 .responsabilidades li::before{ content:"•"; color:var(--azul-principal); display:inline-block; width:18px; margin-left:-18px; }
 
 /* Formação e cursos */
-.curso-item{ margin-bottom:12px; page-break-inside:avoid; break-inside:avoid; }
-.curso-nome{ color:var(--azul-principal); font-weight:700; margin-bottom:4px; }
-.instituicao-periodo{ color:#6c757d; font-weight:600; margin-bottom:6px; }
-.descricao{ color:var(--cinza-texto); line-height:1.5; }
+.curso-item{ 
+    margin-bottom:12px; 
+    padding-bottom: 1rem;
+    page-break-inside:avoid; 
+    break-inside:avoid; 
+}
+
+.curso-nome{ 
+    color:var(--azul-principal); 
+    font-weight:700; 
+    margin-bottom:4px; 
+}
+
+.instituicao-periodo{ 
+    color:#6c757d; 
+    font-weight:600; 
+    margin-bottom:6px; 
+}
+
+.descricao{ 
+    color:var(--cinza-texto); 
+    line-height:1.5; 
+}
 
 /* Habilidades */
 .habilidades-lista{
@@ -177,25 +210,103 @@ section:not(:last-child){ border-bottom:1px solid #eef3fb; padding-bottom:18px }
     cursor:pointer;
     box-shadow:0 6px 18px rgba(35,102,200,0.16);
     transition:transform .12s ease, box-shadow .12s ease;
+    min-height:44px; /* Área de toque mínima para mobile */
+    -webkit-tap-highlight-color:transparent; /* Remove highlight no iOS */
+    touch-action:manipulation; /* Melhora resposta ao toque */
 }
 .btn-pdf:active{ transform:translateY(1px) }
 .btn-pdf:disabled{ opacity:.6; cursor:not-allowed; box-shadow:none }
+.btn-pdf:hover{
+    box-shadow:0 8px 22px rgba(35,102,200,0.2);
+}
 
 /* Responsivo */
-@media (max-width:700px){
+
+/* Smartphones muito pequenos (< 400px) - iPhone SE, etc */
+@media (max-width:399px){
     body{
+        padding:12px;
+        padding-bottom:30px;
+    }
+    
+    .container{ 
+        padding:14px;
+        border-radius:8px;
+    }
+    
+    .nome{ 
+        font-size:1.4rem;
+        letter-spacing:0.3px;
+    }
+    
+    .foto-perfil{ 
+        width:90px; 
+        height:90px;
+    }
+    
+    .cargo-desejado{
+        font-size:0.95rem;
+    }
+    
+    .slogan{
+        font-size:0.9rem;
+    }
+    
+    .contato{
+        font-size:0.9rem;
+    }
+    
+    .contato a{
+        min-height:40px;
+        line-height:40px;
+    }
+    
+    .secao-titulo{
+        font-size:0.95rem;
+    }
+    
+    .perfil-texto{
+        font-size:0.95rem;
+    }
+    
+    .habilidades-lista{
+        grid-template-columns:1fr;
+    }
+    
+    .btn-pdf{
+        padding:10px 16px;
+        font-size:0.9rem;
+        width:100%;
+        max-width:280px;
+    }
+}
+
+/* Smartphones (400px - 767px) */
+@media (max-width:767px){
+    body{
+        padding:16px;
         padding-bottom:40px;
     }
     
-    .container{ padding:16px }
-    .nome{ font-size:1.6rem }
-    .foto-perfil{ width:100px; height:100px }
+    .container{ 
+        padding:18px;
+    }
+    
+    .nome{ 
+        font-size:1.6rem;
+    }
+    
+    .foto-perfil{ 
+        width:100px; 
+        height:100px;
+    }
     
     /* Centralizar foto de perfil no mobile */
     .header{
         flex-direction:column;
         align-items:center;
         text-align:center;
+        gap:16px;
     }
     
     .foto-container{
@@ -217,7 +328,10 @@ section:not(:last-child){ border-bottom:1px solid #eef3fb; padding-bottom:18px }
     /* Ajustar links de contato no mobile - quebrar linha entre eles */
     .contato a{
         display:block;
-        margin:4px 0;
+        margin:6px 0;
+        min-height:44px;
+        line-height:44px;
+        text-align:center;
     }
     
     /* Espaçamento do botão PDF no mobile */
@@ -225,7 +339,64 @@ section:not(:last-child){ border-bottom:1px solid #eef3fb; padding-bottom:18px }
         margin-top:24px;
         margin-bottom:0;
     }
+    
+    .habilidades-lista{
+        grid-template-columns:1fr;
+        gap:8px;
+    }
 }
+
+/* Tablets Portrait (768px - 1024px) */
+@media (min-width:768px) and (max-width:1024px){
+    body{
+        padding:20px;
+    }
+    
+    .container{
+        max-width:800px;
+        padding:24px;
+    }
+    
+    .nome{
+        font-size:1.9rem;
+    }
+    
+    .foto-perfil{
+        width:110px;
+        height:110px;
+    }
+    
+    .header{
+        gap:18px;
+    }
+    
+    .habilidades-lista{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+    
+    .btn-pdf{
+        padding:14px 24px;
+        font-size:1rem;
+    }
+}
+
+/* Tablets Landscape e telas médias (768px - 1024px em landscape) */
+@media (min-width:768px) and (max-width:1024px) and (orientation:landscape){
+    .container{
+        max-width:850px;
+    }
+    
+    .header{
+        flex-wrap:nowrap;
+    }
+    
+    .habilidades-lista{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+/* Telas grandes (acima de 1024px) - já está no estilo base */
 
 /* Impressão / PDF */
 @media print{
