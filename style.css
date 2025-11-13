@@ -1,262 +1,274 @@
-/* styles.css - Atualizado com estilos para a foto, mantendo psicologia das cores */
-
-/* Importação de fonte profissional do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-/* Reset e estilos base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Variáveis de cor */
+:root{
+    --azul-principal: #2366c8; /* tom ajustado para impressão */
+    --azul-escuro: #0056b3;
+    --cinza-texto: #555;
+    --fundo: #f5f5f5;
+    --card-bg: #ffffff;
 }
 
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f5f5f5;
-    padding: 20px;
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html{
+    min-height:100%;
+}
+body{
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background:var(--fundo);
+    color:#222;
+    line-height:1.5;
+    padding:20px;
+    padding-bottom:40px;
+    min-height:100vh;
 }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: white;
-    padding: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+/* Container do currículo */
+.container{
+    max-width:900px;
+    margin:0 auto;
+    background:var(--card-bg);
+    padding:28px;
+    border-radius:10px;
+    box-shadow:0 6px 20px rgba(35,102,200,0.08);
+    overflow:hidden;
 }
 
-/* Estilos para seções */
-section {
-    margin-bottom: 30px;
+/* Header com foto e info */
+.header{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:18px;
+    border-bottom:3px solid rgba(35,102,200,0.08);
+    padding-bottom:18px;
 }
 
-.secao-titulo {
-    color: #007bff;
-    font-size: 1.8em;
-    font-weight: 600;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 5px;
+.foto-container{
+    flex:0 0 auto;
+    margin-top:10px;
 }
 
-.perfil-texto {
-    text-align:left;
-    font-size: 1.05em;
-    line-height: 1.7;
-    color: #444;
+.foto-perfil{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center 15%;
+    border:3px solid var(--azul-principal);
+    box-shadow:0 4px 12px rgba(35,102,200,0.12);
+    display:block;
+    background:#ececec;
 }
 
-/* Experiência Profissional */
-.experiencia-item {
-    margin-bottom: 25px;
+.info-pessoal{
+    flex:1 1 auto;
+    min-width:220px;
 }
 
-.cargo {
-    color: #007bff;
-    font-size: 1.3em;
-    font-weight: 600;
-    margin-bottom: 5px;
+.nome{
+    color:var(--azul-principal);
+    font-size:2.1rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.6px;
+    margin-bottom:6px;
 }
 
-.empresa-periodo {
-    color: #6c757d;
-    font-size: 1em;
-    font-weight: 500;
-    margin-bottom: 10px;
+.cargo-desejado{
+    color:var(--cinza-texto);
+    font-weight:600;
+    margin-bottom:8px;
 }
 
-.responsabilidades {
-    margin-left: 20px;
-    color: #555;
-    line-height: 1.8;
+.slogan{
+    color:var(--cinza-texto);
+    font-style:italic;
+    margin-top:6px;
 }
 
-.responsabilidades li {
-    margin-bottom: 8px;
+.contato{
+    margin-top:10px;
+    color:var(--cinza-texto);
+    font-weight:500;
 }
 
-/* Formação e Cursos */
-.curso-item {
-    margin-bottom: 20px;
+.contato a{ color:var(--azul-principal); text-decoration:none; font-weight:600 }
+.contato a:hover{ color:var(--azul-escuro); text-decoration:underline }
+
+/* Seções */
+section{ margin-bottom:18px; padding-bottom:6px; }
+section:not(:last-child){ border-bottom:1px solid #eef3fb; padding-bottom:18px }
+
+.secao-titulo{
+    color:var(--azul-principal);
+    font-size:1.05rem;
+    font-weight:700;
+    margin-bottom:10px;
+    position:relative;
+    padding-left:12px;
+}
+.secao-titulo::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:4px;
+    height:100%;
+    background:var(--azul-principal);
+    border-radius:2px;
 }
 
-.curso-nome {
-    color: #007bff;
-    font-size: 1.2em;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
+.perfil-texto{ color:#333; font-size:1rem; line-height:1.6; }
 
-.instituicao-periodo {
-    color: #6c757d;
-    font-size: 1em;
-    font-weight: 500;
-    margin-bottom: 5px;
+/* Experiência */
+.experiencia-item{ margin-bottom:14px; page-break-inside:avoid; break-inside:avoid; }
+.cargo{
+    color:var(--azul-principal);
+    font-size:1rem;
+    font-weight:700;
+    margin-bottom:4px;
 }
+.empresa-periodo{ color:#6c757d; font-weight:600; margin-bottom:8px; }
+.responsabilidades{ margin-left:18px; color:var(--cinza-texto); line-height:1.6; }
+.responsabilidades li{ margin-bottom:8px; list-style: none; }
+.responsabilidades li::before{ content:"•"; color:var(--azul-principal); display:inline-block; width:18px; margin-left:-18px; }
 
-.descricao {
-    color: #555;
-    line-height: 1.7;
-}
+/* Formação e cursos */
+.curso-item{ margin-bottom:12px; page-break-inside:avoid; break-inside:avoid; }
+.curso-nome{ color:var(--azul-principal); font-weight:700; margin-bottom:4px; }
+.instituicao-periodo{ color:#6c757d; font-weight:600; margin-bottom:6px; }
+.descricao{ color:var(--cinza-texto); line-height:1.5; }
 
 /* Habilidades */
-.habilidades-lista {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
-    list-style: none;
-    margin-left: 0;
+.habilidades-lista{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:10px;
+    list-style:none;
+    margin-left:0;
+}
+.habilidades-lista li{
+    padding:10px 12px;
+    background:#fbfdff;
+    border-left:4px solid var(--azul-principal);
+    border-radius:6px;
+    color:var(--cinza-texto);
+    font-weight:600;
+    box-shadow:0 1px 4px rgba(0,0,0,0.03);
 }
 
-.habilidades-lista li {
-    padding: 8px 15px;
-    background-color: #f8f9fa;
-    border-left: 3px solid #007bff;
-    color: #555;
-    font-weight: 500;
+/* Botão PDF */
+.pdf-container{ 
+    text-align:center; 
+    margin-top:30px; 
+    margin-bottom:0; 
+    padding-bottom:0;
 }
 
-/* Estilos para o cabeçalho com foto */
-.header {
-    text-align: center;
-    border-bottom: 2px solid #007bff; /* Azul marinho para confiança e destaque */
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+.btn-pdf{
+    display:inline-block;
+    background:linear-gradient(135deg,var(--azul-principal),var(--azul-escuro));
+    color:#fff;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 6px 18px rgba(35,102,200,0.16);
+    transition:transform .12s ease, box-shadow .12s ease;
 }
+.btn-pdf:active{ transform:translateY(1px) }
+.btn-pdf:disabled{ opacity:.6; cursor:not-allowed; box-shadow:none }
 
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px; /* Espaço entre foto e texto */
-    flex-wrap: wrap; /* Responsivo para mobile */
-}
-
-.foto-container {
-    flex-shrink: 0; /* Impede que a foto encolha */
-}
-
-.foto-perfil {
-    width: 120px; /* Tamanho ideal para currículos: não muito grande */
-    height: 120px;
-    max-width: 120px; /* Garante que não estique no PDF */
-    max-height: 120px; /* Garante que não estique no PDF */
-    border-radius: 50%; /* Formato circular para toque moderno e amigável */
-    object-fit: cover; /* Mantém proporção da imagem */
-    object-position: center 15%; /* Centraliza horizontalmente e posiciona o rosto um pouco mais para cima */
-    border: 3px solid #007bff; /* Borda azul para confiança e destaque profissional */
-    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2); /* Sombra sutil em azul claro para profundidade */
-}
-
-.info-pessoal {
-    flex: 1;
-    min-width: 250px; /* Garante espaço para o texto */
-}
-
-.nome {
-    color: #007bff; /* Azul para transmitir confiança e profissionalismo */
-    font-size: 2.5em;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.contato {
-    color: #6c757d; /* Cinza para equilíbrio e informações secundárias */
-    font-size: 1.1em;
-    margin: 10px 0 0 0;
-}
-
-.contato a {
-    color: #007bff; /* Azul profissional, alinhado com o tema do currículo */
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.contato a:hover {
-    color: #0056b3; /* Azul mais escuro no hover */
-    text-decoration: underline;
-}
-
-/* Responsivo para mobile */
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-        margin: 10px;
+/* Responsivo */
+@media (max-width:700px){
+    body{
+        padding-bottom:40px;
     }
     
-    .header-content {
-        flex-direction: column;
-        gap: 10px;
+    .container{ padding:16px }
+    .nome{ font-size:1.6rem }
+    .foto-perfil{ width:100px; height:100px }
+    
+    /* Centralizar foto de perfil no mobile */
+    .header{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
     }
     
-    .foto-perfil {
-        width: 100px;
-        height: 100px;
-        object-position: center 15%; /* Mantém o rosto completo visível também no mobile */
+    .foto-container{
+        display:flex;
+        justify-content:center;
+        width:100%;
     }
     
-    .nome {
-        font-size: 2em;
+    .info-pessoal{
+        text-align:center;
+        width:100%;
     }
     
-    .secao-titulo {
-        font-size: 1.5em;
-    }
-}
-
-/* Estilo para o botão PDF (mantido) */
-.btn-pdf {
-    background-color: #007bff; /* Azul para confiança, alinhado à psicologia das cores */
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn-pdf:hover:not(:disabled) {
-    background-color: #0056b3; /* Tom mais escuro de azul para interatividade */
-}
-
-.btn-pdf:disabled {
-    background-color: #6c757d;
-    cursor: not-allowed;
-    opacity: 0.7;
-}
-
-/* Estilos para melhor renderização no PDF */
-@media print {
-    body {
-        background-color: white;
-        padding: 0;
+    /* Remover separador "•" no mobile */
+    .contato .separador{
+        display:none;
     }
     
-    .container {
-        box-shadow: none;
-        border-radius: 0;
-        max-width: 100%;
-        padding: 20px;
+    /* Ajustar links de contato no mobile - quebrar linha entre eles */
+    .contato a{
+        display:block;
+        margin:4px 0;
     }
     
-    .btn-pdf {
-        display: none;
+    /* Espaçamento do botão PDF no mobile */
+    .pdf-container{
+        margin-top:24px;
+        margin-bottom:0;
     }
 }
 
-/* Melhora quebra de páginas no PDF */
-.experiencia-item,
-.curso-item {
-    page-break-inside: avoid;
-    break-inside: avoid;
+/* Impressão / PDF */
+@media print{
+    body{ background:white; padding:0; }
+    .container{ box-shadow:none; border-radius:0; max-width:100%; padding:18px; }
+    .btn-pdf{ display:none }
+    .foto-perfil{ 
+        box-shadow:none; 
+        border-width:2px;
+        width:120px !important;
+        height:120px !important;
+        max-width:120px !important;
+        max-height:120px !important;
+    }
+    .header{
+        display:flex !important;
+        align-items:center !important;
+        gap:20px !important;
+    }
+    .nome{
+        font-size:2.1rem !important;
+        line-height:1.2 !important;
+        word-wrap:break-word;
+    }
 }
 
-section {
-    page-break-inside: avoid;
-    break-inside: avoid;
+/* Estilos para melhor renderização no PDF via html2canvas */
+.header{
+    position:relative;
+    z-index:1;
 }
+
+.foto-perfil{
+    image-rendering:-webkit-optimize-contrast;
+    image-rendering:crisp-edges;
+    -ms-interpolation-mode:nearest-neighbor;
+}
+
+.nome{
+    word-break:keep-all;
+    white-space:normal;
+    line-height:1.2;
+}
+
+/* Evitar que seções quebrem no PDF */
+.experiencia-item, .curso-item, section { page-break-inside:avoid; break-inside:avoid; }

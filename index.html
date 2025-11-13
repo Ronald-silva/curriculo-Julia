@@ -1,99 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingrid Julia Alves da Silva</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    
+    <!-- Meta Tags Profissionais -->
+    <title>Ingrid Julia Alves da Silva | Vendedora e Atendimento ao Cliente | Currículo</title>
+    <meta name="description" content="Currículo profissional de Ingrid Julia Alves da Silva. Experiência em vendas, atendimento ao cliente e estética. Fortaleza, CE." />
+    <meta name="keywords" content="Ingrid Julia, currículo, vendedora, atendimento ao cliente, Fortaleza, vendas, call center, estética" />
+    <meta name="author" content="Ingrid Julia Alves da Silva" />
+    
+    <!-- URL Canônica -->
+    <link rel="canonical" href="https://curriculo-julia.vercel.app/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://curriculo-julia.vercel.app/" />
+    <meta property="og:title" content="Ingrid Julia Alves da Silva | Vendedora e Atendimento ao Cliente" />
+    <meta property="og:description" content="Jovem profissional com experiência em vendas, atendimento ao cliente e estética. Fortaleza, CE." />
+    <meta property="og:image" content="https://curriculo-julia.vercel.app/img/julia-perfil.png" />
+    <meta property="og:locale" content="pt_BR" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://curriculo-julia.vercel.app/" />
+    <meta name="twitter:title" content="Ingrid Julia Alves da Silva | Currículo Profissional" />
+    <meta name="twitter:description" content="Experiência em vendas, atendimento ao cliente e estética. Fortaleza, CE." />
+    <meta name="twitter:image" content="https://curriculo-julia.vercel.app/img/julia-perfil.png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="alternate icon" href="favicon.svg" />
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <!-- Bibliotecas para geração de PDF -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Cabeçalho com Foto -->
-        <header class="header">
-            <div class="header-content">
-                <div class="foto-container">
-                    <img src="img/julia-perfil.png" alt="Foto perfil julia" class="foto-perfil">
-                </div>
-                <div class="info-pessoal">
-                    <h1 class="nome">Ingrid Julia Da silva</h1>
-                    <p class="contato">
-                        Fortaleza, CE | 19 anos | <a href="https://wa.me/558598295909" target="_blank" rel="noopener noreferrer">Whatsapp: (85) 9829-5909</a> 
-                    </p>
-                </div>
+    <div class="container" id="curriculo">
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="foto-container" aria-hidden="true">
+                <img src="img/julia-perfil.png" alt="Foto de Ingrid Julia" class="foto-perfil" />
+            </div>
+
+            <div class="info-pessoal">
+                <h1 class="nome">Ingrid Julia Alves da Silva</h1>
+                <p class="cargo-desejado">Vendedora e Atendimento ao Cliente</p>
+                <p class="slogan">Atendo com sorriso, vendo com verdade.</p>
+
+                <p class="contato" style="margin-top:12px">
+                    Fortaleza, CE | 19 anos<br>
+                    <a href="https://wa.me/558598295909" target="_blank" rel="noopener noreferrer">📱 Whatsapp: (85) 9829-5909</a><span class="separador">&nbsp;•&nbsp;</span>
+                    <a href="mailto:ingridjulia.vendas@gmail.com">✉️ ingridjulia.vendas@gmail.com</a>
+                </p>
             </div>
         </header>
 
-        <!-- Seção de Perfil Profissional -->
-        <section class="perfil">
-            <h2 class="secao-titulo">Perfil Profissional</h2>
+        <!-- Perfil -->
+        <section class="perfil" aria-labelledby="perfil-title">
+            <h2 id="perfil-title" class="secao-titulo">Perfil Profissional</h2>
             <p class="perfil-texto">
-                Tenho experiência em vendas, atendimento ao cliente e estética. Destaco-me por comunicação eficaz, empatia e criatividade, adquiridas em varejo de moda, eventos e call center. Busco oportunidades em áreas de atendimento ou beleza para crescer e contribuir com entusiasmo e dedicação.
+                Jovem profissional com experiência em <strong>vendas, atendimento ao cliente e estética</strong>, destacando-se pela
+                <strong>comunicação empática</strong> e <strong>foco em resultados</strong>. Atuou em <strong>moda, eventos e call center</strong>,
+                mantendo excelentes índices de satisfação e fidelização de clientes. Busca oportunidade em <strong>atendimento, vendas ou estética</strong>,
+                onde possa crescer, superar metas e contribuir com entusiasmo e dedicação.
             </p>
         </section>
 
-        <!-- Experiência Profissional -->
-        <section class="experiencia">
-            <h2 class="secao-titulo">Experiência Profissional</h2>
+        <!-- Experiência -->
+        <section class="experiencia" aria-labelledby="exp-title">
+            <h2 id="exp-title" class="secao-titulo">Experiência Profissional</h2>
+
             <div class="experiencia-item">
                 <h3 class="cargo">Atendente de Call Center</h3>
-                <p class="empresa-periodo">Paraíso das Mensagens, Fortaleza-CE | Atual</p>
+                <p class="empresa-periodo"><strong>Paraíso das Mensagens</strong> — Fortaleza-CE | <em>Em exercício</em></p>
                 <ul class="responsabilidades">
-                    <li>Atendimento telefônico a clientes, resolvendo dúvidas e processando pedidos com eficiência.</li>
-                    <li>Manutenção de alta taxa de satisfação do cliente através de comunicação clara e empática.</li>
+                    <li>Atendimento a clientes via telefone e WhatsApp, resolvendo dúvidas e processando pedidos com agilidade.</li>
+                    <li>Contribuição para manutenção de alto índice de satisfação por meio de comunicação clara e empática.</li>
                 </ul>
             </div>
+
             <div class="experiencia-item">
                 <h3 class="cargo">Vendedora</h3>
-                <p class="empresa-periodo">3 Conquistas Fashion (Box no Centro Fashion), Fortaleza-CE | [Ano: 2023]</p>
+                <p class="empresa-periodo"><strong>3 Conquistas Fashion (Centro Fashion)</strong> — Fortaleza-CE | <em>2023</em></p>
                 <ul class="responsabilidades">
-                    <li>Vendas consultivas de roupas femininas, alcançando metas mensais de vendas.</li>
-                    <li>Atendimento personalizado, sugerindo looks e promovendo produtos com foco em satisfação da cliente.</li>
+                    <li>Vendas consultivas de roupas femininas, alcançando e superando metas mensais.</li>
+                    <li>Atendimento personalizado com foco em fidelização e satisfação da cliente.</li>
                 </ul>
             </div>
+
             <div class="experiencia-item">
                 <h3 class="cargo">Auxiliar em Eventos</h3>
-                <p class="empresa-periodo">Eventos Festivos| [Em Exercício]</p>
+                <p class="empresa-periodo"><strong>Eventos Festivos</strong> — Fortaleza-CE | <em>Em exercício</em></p>
                 <ul class="responsabilidades">
-                    <li>Apoio na venda de água, cervejas, caldos e merendas, gerenciando estoque e fluxo de clientes.</li>
-                    <li>Manuseio de caixa e interação dinâmica com público em ambientes de alta movimentação.</li>
+                    <li>Apoio em vendas de alimentos e bebidas, controle de caixa e gestão de estoque.</li>
+                    <li>Interação dinâmica com o público em eventos de grande movimento.</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Formação e Cursos -->
-        <section class="formacao">
-            <h2 class="secao-titulo">Formação e Cursos</h2>
+        <!-- Formação -->
+        <section class="formacao" aria-labelledby="formacao-title">
+            <h2 id="formacao-title" class="secao-titulo">Formação e Cursos</h2>
+
             <div class="curso-item">
-                <h3 class="curso-nome">Curso de Design de Sombrancelhas</h3>
-                <p class="instituicao-periodo">SENAC, Fortaleza-CE | Concluído em [Ano: 2023]</p>
+                <h4 class="curso-nome">Curso de Design de Sobrancelhas</h4>
+                <p class="instituicao-periodo">SENAC — Fortaleza-CE | 2023</p>
                 <p class="descricao">Técnicas de design, henna e micropigmentação para estética facial.</p>
             </div>
-            <!-- Adicione mais cursos ou ensino médio aqui se aplicável -->
+
+            <div class="curso-item">
+                <h4 class="curso-nome">Curso de Informática Avançada</h4>
+                <p class="instituicao-periodo">Grau Técnico — Fortaleza-CE | Em andamento</p>
+                <p class="descricao">Ferramentas de escritório, sistemas operacionais e aplicações avançadas.</p>
+            </div>
         </section>
 
         <!-- Habilidades -->
-        <section class="habilidades">
-            <h2 class="secao-titulo">Habilidades</h2>
+        <section class="habilidades" aria-labelledby="hab-title">
+            <h2 id="hab-title" class="secao-titulo">Habilidades</h2>
             <ul class="habilidades-lista">
-                <li>Vendas e Negociação</li>
-                <li>Atendimento ao Cliente</li>
-                <li>Comunicação Verbal e Escrita</li>
-                <li>Conhecimentos em Beleza (Sombrancelhas)</li>
-                <li>Trabalho em Equipe e sob Pressão</li>
-                <li>Ferramentas de Call Center (ex: CRM básico)</li>
+                <li>Comunicação empática e clara</li>
+                <li>Vendas e negociação</li>
+                <li>Atendimento presencial e remoto</li>
+                <li>Conhecimentos em estética facial</li>
+                <li>Trabalho em equipe e sob pressão</li>
+                <li>Ferramentas de call center & WhatsApp Business</li>
             </ul>
         </section>
     </div>
 
-    <!-- Botão para Download PDF -->
-    <div style="text-align: center; margin: 20px;">
-        <button id="downloadPDF" class="btn-pdf">Baixar Currículo em PDF</button>
+    <!-- Botão PDF -->
+    <div class="pdf-container">
+        <button id="downloadPDF" class="btn-pdf" type="button">
+            Baixar Currículo em PDF</button>
     </div>
 
+    <!-- Scripts: html2canvas + jsPDF via CDN -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
     <!-- Script para geração de PDF -->
     <script src="script.js"></script>
 </body>
-</html
+</html>
